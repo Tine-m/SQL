@@ -187,8 +187,8 @@ group by country.country_id having avg(price) > 20.0;
 # SQL Script exercise
 
 
-Something about the coffee database design doesn’t quite seem right. <br>
-What is that?
+Something about the current coffee database design doesn’t quite seem right. <br>
+Can you find any problems and possible improvements?
 
 
 ![](img/coffeeDB.png)
@@ -200,7 +200,7 @@ Redesign the database:
 2.	Make sure that the primary keys can be create automatically (hint: `AUTO_INCREMENT`)
 3.	Run SQL script 
 ```
-**Voila you now have a redesigned database, ready to be shared wth the rest of your team!**
+**Voila you now have a redesigned database, ready to be shared with the rest of your team!**
 
 
 
