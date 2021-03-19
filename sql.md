@@ -78,7 +78,7 @@ select min(order_date) from orders;
 ![](img/example_C.png)
 
 
-# Exercises (20 minutes)
+# Exercises (30 minutes)
 
 We will use the coffee-database (the database you used in Benjamin’s classes). If you don’t have the database already, find the script to create the database [here.](https://github.com/behu-kea/dat20-classes/blob/master/week-11/assets/coffee-database.sql)
 
@@ -130,12 +130,14 @@ having count(*) > 2;
 ```
 ![](img/example_E.png)
 
-
+<br>
+<br>
 
 5.	List product id, country and average price for products grouped by country. 
 ```sql
 select product_id, country, avg(price) from product inner join country on product.country_id = country.country_id
 group by country.country_id;
+
 ```
 6. List product id, country and average price grouped by country, but only for countries having an average prices higher than 20.00. 
 
@@ -143,6 +145,7 @@ group by country.country_id;
 select product_id, country, avg(price) from product inner join country on product.country_id = country.country_id
 group by country.country_id having avg(price) > 20.0;
 ```
+
 7. Find the number of products that have the same price.
 
 ```sql
