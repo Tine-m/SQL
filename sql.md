@@ -32,13 +32,13 @@ SQL aggregate functions can give of these summary queries. There are five functi
 ### count():
 
 * count(*): counts total number of records.
-* count(salary): counts number of not null values for the column salary.
-* count(distinct salary):  counts number of distinct non null values for the column salary.
+* count(salary): counts number of not null values for the column, e.g. salary.
+* count(distinct salary):  counts number of distinct non null values for the column, e.g. salary.
 
 ### sum():
 
-* sum(salary):  sums all not null values for column salary.
-* sum(distinct salary): sums all distinct non null values for the column salary.
+* sum(salary):  sums all not null values for column, e.g. salary.
+* sum(distinct salary): sums all distinct non null values for the column,e.g. salary.
 
 ### avg():
 
@@ -48,8 +48,8 @@ SQL aggregate functions can give of these summary queries. There are five functi
  
 ### min() & max():
 
-Min(salary): finds minimum value among the the not null values for the salary column.
-Max(salary): finds maximum value among the the not null values for the salary column.
+Min(salary): finds minimum value among the the not null values for the column, e.g. salary.
+Max(salary): finds maximum value among the the not null values for the column, e.g. salary.
 
 # Examples (together) 
 
