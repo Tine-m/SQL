@@ -15,7 +15,7 @@ The idea is that you after working with these exercises:
 Pretty much all systems need to persist data and relational databases are the most widely used for (administrative) systems. You will need SQL as a query language to get data out of the database.
 
 ##  Supplementary resources
-- [w3schools tutorial](https://www.w3schools.com/sql/default.asp) Min, Max, Avg, count, Sum
+  - [w3schools tutorials: ](https://www.w3schools.com/sql/default.asp) Min, Max, Avg, Count, Sum
 - [LinkedIn Learning video](https://www.linkedin.com/learning/sql-essential-training-3/what-are-aggregates?u=36836804) SQL Essential Training: chapter 8
 
 
