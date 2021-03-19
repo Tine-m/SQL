@@ -78,7 +78,54 @@ select min(order_date) from orders;
 ![](img/example_C.png)
 
 
-## Git begreber
+## Exercises (20 minutes)
+
+We will be working with the coffee-database for this exercise (the database as you used in Benjamin’s classes). If you don’t have the database already, find the script to create the database [here.](https://github.com/behu-kea/dat20-classes/blob/master/week-11/assets/coffee-database.sql)
+
+
+1)	Find the number of female customers.
+```sql
+ SELECT count(*) FROM coffee_database.customer
+where gender = 'F';
+```
+
+2)	find the number of customers whose name starts with ‘B’
+```sql
+SELECT count(*) FROM coffee_database.customer
+where lastname like 'B%';
+```
+3)	Calculate the average price of all products (only output the average price)
+```sql
+SELECT avg(price) FROM coffee_database.product;
+SELECT round(avg(price)) FROM coffee_database.product;
+```
+
+4)	
+
+a.	List product id, country and price for all products (no aggregate function to be used here, but a join of product and country tables is needed)
+
+```sql
+SELECT product_id, country, price FROM product inner join country on product.country_id = country.country_id;
+```
+b.	List product id, country and average price for products grouped by country 
+```sql
+SELECT product_id, country, avg(price) FROM product inner join country on product.country_id = country.country_id
+group by country.country_id;
+```
+a.	
+List product id, country and average price grouped by country, but only for countries having an average prices higher than 20.00 
+
+```sql
+SELECT product_id, country, avg(price) FROM product inner join country on product.country_id = country.country_id
+group by country.country_id having avg(price) > 20.0;
+```
+5.
+Find the number of products that have the same price
+
+```sql
+select count(*) from product
+group by price having count(*) > 1;
+```
 
 
 
