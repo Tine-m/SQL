@@ -137,7 +137,8 @@ having count(*) > 2;
 
 <br>
 <br>
-Use one or both clauses in the following exercises.
+Use `GROUP BY` and `HAVING`in the following exercises.
+<br>
 
 6. List number of employees of each gender.
 ```sql
@@ -157,67 +158,39 @@ select avg(price) from product
 group by country_id;
 ```
 
-9.	List product id, country name and average product price for products for each country (you will need to join product table with country table).
+9.	List product id, country name and average product price for each country (you will need to join product and country tables).
 ```sql
 select product_id, country, avg(price) from product inner join country on product.country_id = country.country_id
 group by country.country_id;
 ```
 
-10. List product id, country and average product price for each country, but only for countries having an average product prices higher than 20.00. 
+10. List product id, country name and average product price for each country, but only for countries that have an average product price higher than 20.00. 
 
 ```sql
 select product_id, country, avg(price) from product inner join country on product.country_id = country.country_id
 group by country.country_id having avg(price) > 20.0;
 ```
 
+### SQL Script exercise
 
 
+Something doesn’t quite seem right above the design of the coffee database.
+What could that be?
 
 
+![](img/coffeeDB.png)
 
+What can we do about it?
+```
+$
+Redesign database
+1.	Update SQL script
+2.	Make sure that the primary keys can be create automatically (hint: `AUOT_INCREMENT`)
+3.	Run SQL script 
+$
+```
+**Voila you now have a redesigned database, ready to be shared wth the rest of your team!**
 
-## Opsætning
-
-Der er flere måder at gøre det på, men det *nemmeste* er at starte på github. 
-
-### Lav et nyt projekt på github
-1. Du skal oprette en konto på github
-2. Dernæst skal du oprette et nyt repository (det er det lille "+" i øverste højre hjørne)
-3. Du vil blive spurgt om navn på repository - tænk på dette navn som det samme navn du ville bruge til et IntelliJ projekt
-4. LAV README FILEN!!!!
-
-Du skulle nu gerne se noget der minder om dette:
-
-![](img/NewProjectOnGithub.png)
-
-### Gitignore
-Dette er en lille knast, vi skal over. Når vi siger `git add .` så vil git lægge alle nye eller ændrede filer i workspace over i staging area. Men der er mange ting der *ikke* skal med. F.eks.
-
-* Filer der er specifikke til Mac (ikoner mv)
-* Filer der er specifikke til Windows (ikoner mv)
-* Filer der indeholder personlige indstillinger for netbeans
-* Filer der er oversatte java programmer
-
-For at gøre dette til at holde ud i praksis, så kan man lave en speciel fil der hedder `.gitignore` som placeres øverst i projektet. 
-
-1. Download denne [.gitignore](sample_gitignore.txt) fil. (som er en, jeg har lavet)
-2. På det nye projekt i github, vælg den knap der hedder "Create new file" (lidt til venstre for den store grønne knap).
-3. Dette åbner et vindue hvor du kan  paste indholdet fra den downloadede `.gitignore` fil ind, og du kan navngive filen ".gitignore". - Github opdager du er ved at lave en gitignore fil, men den hjælp den giver er ikke god nok!.
-4. skriv en kort besked i "commit changes" (f.eks. *tilføjede .gitignore fil*)
-
-### Clone repository
-Hvis du trykker på den store grønne knap, kommer der en mulighed frem hvor du kan vælge "copy url til clipboard":
-
-![](img/Clone.png)
-
-### Så skal du over i Git Bash....
-
-Download https://git-scm.com/downloads og installér (følg default settings i installationsprocessen medmindre du har særlige præferencer).
-
-### Kom i gang
-Jeg vil anbefale at du laver et katalog i dit filsystem, som du bruger til git-projekter. Flyt dig derhen vha. `cd` kommandoen.
-
-I kommando prompten skal du så skrive `git clone URL`, hvor URL er det du kopiere de fra github.
 
 git clone kommandoen skulle så gerne skrive noget i stil med:
 
