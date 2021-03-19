@@ -7,10 +7,9 @@ An aggregate function is a computation where the values of multiple rows are gro
 ## Learning Objectives
 The idea is that you after working with these exercises:
 
-- is able to code summary queries using the aggregate functions: AVG, SUM, MIN, MAX, COUNT, COUNT(*)
-- is able to code summary queries with HAVING and GROUP BY
+- are able to code summary queries using the aggregate functions: AVG, SUM, MIN, MAX, COUNT, COUNT(*)
+- are able to code summary queries with HAVING and GROUP BY
 - can maintain an SQL script to handle database changes
-- AUTO_INCREMENT
 
 
 ## Relevance for your professional life
