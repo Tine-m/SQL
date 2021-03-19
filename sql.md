@@ -2,7 +2,7 @@
 
 An aggregate function is a computation where the values of multiple rows are grouped together as input on certain criteria to form a single value of more significant meaning.
 
-![](img/aggregate_functions.PNG)
+[](img/aggregate_functions.PNG)
 
 ## Learning Objectives
 The idea is that you after working with these exercises:
@@ -29,7 +29,9 @@ The COUNT() function returns the number of rows that matches a specified criteri
 
 Let’s use this table ‘orders’:
 ![](img/orders_table.png)
-<picture>orders</picture>
+
+
+
 
 Examples (together) 
 If stated in natural language, what do the following SQL statements express (the result is shown below the SQL statement)?
