@@ -120,13 +120,13 @@ group by orders.customer_id;
 ![](img/example_C.png)
 
 
-You can limit the result, combining `GROUP BY` and `HAVING`. `HAVING` determines which groups are included in the final result: <br>
+You can limit the result, combining `GROUP BY` and `HAVING`. `HAVING` determines which groups are included in the final result. <br>
 In this example we are counting the number of orders for each customer (i.e grouped by customer_id), BUT only for customers that have more than 2 orders:
 
 ```sql
 select customer_id, count(*) from orders
 group by orders.customer_id
-having count(*) >=3;
+having count(*) > 2;
 ```
 ![](img/example_E.png)
 
