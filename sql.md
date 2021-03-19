@@ -31,7 +31,7 @@ SQL aggregate functions can give of these summary queries. There are five functi
 
 ### count():
 
-* count(*): counts total number of records.
+* count(*): counts total number of rows.
 * count(salary): counts number of not null values for the column, e.g. salary.
 * count(distinct salary):  counts number of distinct non null values for the column, e.g. salary.
 
