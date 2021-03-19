@@ -28,6 +28,7 @@ Counting
 The COUNT() function returns the number of rows that matches a specified criterion.
 
 Let’s use this table ‘orders’:
+![](img/orders_table.png)
 <picture>orders</picture>
 
 Examples (together) 
