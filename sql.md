@@ -2,7 +2,7 @@
 
 An aggregate function is a computation where the values of multiple rows are grouped together as input on certain criteria to form a single value of more significant meaning.
 
-[](img/aggregate_functions.PNG)
+![](img/aggregate_functions.PNG)
 
 ## Learning Objectives
 The idea is that you after working with these exercises:
@@ -23,15 +23,31 @@ Pretty much all systems need to persist data and relational databases are the mo
 
 ## Why aggregate functions?
 
-Counting
-
-The COUNT() function returns the number of rows that matches a specified criterion.
-
 Let’s use this table ‘orders’:
 ![](img/orders_table.png)
 
 
+*Count():
 
+Count(*): Returns total number of records .i.e 6.
+Count(salary): Return number of Non Null values over the column salary. i.e 5.
+Count(Distinct Salary):  Return number of distinct Non Null values over the column salary .i.e 4
+
+Sum():
+
+sum(salary):  Sum all Non Null values of Column salary i.e., 310
+sum(Distinct salary): Sum of all distinct Non-Null values i.e., 250.
+
+Avg():
+
+Avg(salary) = Sum(salary) / count(salary) = 310/5
+Avg(Distinct salary) = sum(Distinct salary) / Count(Distinct Salary) = 250/4
+
+ 
+Min() & Max():
+
+Min(salary): Minimum value in the salary column except NULL i.e., 40.
+Max(salary): Maximum value in the salary i.e., 80.
 
 Examples (together) 
 If stated in natural language, what do the following SQL statements express (the result is shown below the SQL statement)?
