@@ -60,18 +60,21 @@ Let’s use this table ‘orders’:
 ### If stated in natural language, what do the following SQL statements express (the result is shown below the SQL statement)?
 
 A)
+```sql
 select count(*) from orders;
-
+```
 ![](img/example_A.png)
 
 B)
+```sql
 select count(distinct customer_id) from orders;
-
+```
 ![](img/example_B.png)
 
 C)
+```sql
 select min(order_date) from orders;
-
+```
 ![](img/example_C.png)
 
 
@@ -83,9 +86,10 @@ select min(order_date) from orders;
 ### Group by having
 
 D)
+```sql
 select customer_id, count(*) from orders
 group by orders.customer_id;
-
+```
 ![](img/example_D.png)
 
 Workspace (arbejdsområde) er de filer, der er i din normale filstruktur. Tænk på et IntelliJ projekt som et eksempel.
