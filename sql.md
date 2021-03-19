@@ -22,26 +22,31 @@ Pretty much all systems need to persist data and relational databases are the mo
 
 
 ## Why aggregate functions?
+Sometimes we don't "just" want to retrive the actual rows from the database, but rather need information based on aggregated data. For instance:
+* Who earns the most in the company?
+* What is the total sum of salaries in the development department?
+* What is the average salary based on gender?
 
+SQL aggregate functions can give of these summary queries. There are five functions: 
 
-### Count():
+### count():
 
 * count(*): counts total number of records.
 * count(salary): counts number of not null values for the column salary.
 * count(distinct salary):  counts number of distinct non null values for the column salary.
 
-### Sum():
+### sum():
 
 * sum(salary):  sums all not null values for column salary.
 * sum(distinct salary): sums all distinct non null values for the column salary.
 
-### Avg():
+### avg():
 
 * avg(salary) = sum(salary) / count(salary).
 * avg(distinct salary) = sum (distinct salary) / count(distinct salary).
 
  
-### Min() & Max():
+### min() & max():
 
 Min(salary): finds minimum value among the the not null values for the salary column.
 Max(salary): finds maximum value among the the not null values for the salary column.
