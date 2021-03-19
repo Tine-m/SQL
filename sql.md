@@ -1,4 +1,4 @@
-# SQL Aggregate functions (Murach chap 6 Summary Queries)
+# SQL Aggregate functions (Murach Chapter 6 Summary Queries)
 
 An aggregate function is a computation where the values of multiple rows are grouped together as input on certain criteria to form a single value of more significant meaning.
 
@@ -61,8 +61,22 @@ Let’s use this table ‘orders’:
 
 A)
 select count(*) from orders;
-<picture>result </picture>
+![](img/example_A.png)
 
+B)
+select count(distinct customer_id) from orders;
+![](img/example_B.png)
+
+C)
+select customer_id, count(*) from orders
+group by orders.customer_id;
+
+![](img/example_C.png)
+
+D)
+select min(order_date) from orders;
+
+![](img/example_D.png)
 - Tillade at to udviklere arbejder på hver sin del, og så hjælpe med at *flette* de to dele sammen igen.
 - At kunne lægge en tidligere version til side - for eksempel lave en version, som lige præcis er det system, der blev leveret til kunde A, så vi kan se hvad der er rettet af fejl siden da.
 - At kunne prøve en ny idé af, og smide den ud, hvis det ikke duer.
