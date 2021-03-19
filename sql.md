@@ -1,6 +1,6 @@
 # SQL Aggregate Functions (Murach Chapter 6 Summary Queries)
 
-An aggregate function is a computation where the values of multiple rows are grouped together as input on certain criteria to form a single value of more significant meaning.
+An aggregate function is a computation where the values of multiple rows are grouped together as input on certain criteria to form a single value of significant meaning.
 
 ![](img/aggregate_functions.png)
 
