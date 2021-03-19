@@ -135,10 +135,11 @@ having count(*) > 2;
 ```
 ![](img/example_E.png)
 
-<br>
-<br>
+
+<div>
 Use `GROUP BY` and `HAVING`in the following exercises.
-<br>
+  </div>
+
 
 6. List number of employees of each gender.
 ```sql
@@ -171,11 +172,11 @@ select product_id, country, avg(price) from product inner join country on produc
 group by country.country_id having avg(price) > 20.0;
 ```
 
-### SQL Script exercise
+# SQL Script exercise
 
 
-Something doesn’t quite seem right above the design of the coffee database.
-What could that be?
+Something about the coffee database design doesn’t quite seem right. <br>
+What is that?
 
 
 ![](img/coffeeDB.png)
@@ -190,96 +191,4 @@ Redesign database
 **Voila you now have a redesigned database, ready to be shared wth the rest of your team!**
 
 
-
-
-
-#### Kopier filer ind i workspace
-Du har sikkert allerede et IntelliJ projekt. Du kan nu kopiere filerne ind i det nyt git projekt og bruge `git log` og `git status` til at se, hvad der er sket ind til videre.
-
-Der findes andre metoder til at sætte det op. Det er muligt at starte med at lave et lokalt repository, og så senere sætte det på som delt repository. Men metoden ovenfor virker.
-
-
-
-# Opgave
-Opgaven er at få sat et repository op for jeres Grocery List opgave (Java repetitionsopgave). 
-
-Der er dog først lige nogle øvelser, der ikke handler om denne opgave.
-
-
-### Opg 1
-Der skal oprettes et repository på github, som I skal være to om. 
-
-* Som led i at oprette dette repository vil jeg anbefale at I i readme filen skriver, hvilke medlemmer der er med i gruppen, og hvad jeres github brugernavne er.
-* Husk at få lavet .gitignore filen - se ovenfor.
-<!--- * Inviter dine gruppemedlemmer til at være med i dette repository. --->
-
-
-### Opg 2
-Download (ikke vha clone, blot ren gammeldags zip) [Kodestafet zipfil på Fronter](https://kea-fronter.itslearning.com/LearningToolElement/ViewLearningToolElement.aspx?LearningToolElementId=847847)  og få det til at køre. 
-
-### Opg 3
-Lave en klon af github projektet og kopierer IntelliJ projektet over i denne klon og få det op på github.
-
-### Opg 4
-Klon til den andens maskine og få det også til at køre fra dennes maskiner (I har nu to kloner kørende lokalt).
-
-### Opg 5
-Den ene af jer ændrer datoformatet i udskrivDato metoden() i klassen Hovedmenu.java så man får udskrevet dato med punktum i stedet for bindestreg. F.eks. 31.08.2020.
-
-### Opg 6
-Den, der ændrede, skal nu få disse ændringer på github. Det gøres ved:
-
-```bash
-$ git add . # Tilføj alle ændringer fra workspace til staging/index.
-$ git commit -m "Ændret datoformat"
-$ git push # Push ændringer til github
-```
-### Opg 7
-Den anden skal nu få denne ændring ned på sin egen maskine
-
-```bash
-$ git pull # opdater local repository og workspace
-```
-
-### Opg 8
-Slet det directory som indeholder projektet. Check at det er fuldstændigt væk, dødt, pist borte! Dernæst gå til jeres Github og klon det, så du får det igen. Pointe: Hvis det er på jeres github er det aldrig tabt!!!!
-
-## Merge opgave (extra)
-Denne opgave er optionel - men skal laves af alle på et tidpunkt senere i semesteret.
-
-### Opg 9 
-Når man skal arbejde sammen, så er der mange ting der skal falde på plads,  her vil vi se på to ting:
-
-* Man prøver at aftale hvem der arbejder på hvilke filer (f.eks. en laver database og en anden laver web sider ...)
-* Det er vigtigt at man ofte laver et `git pull` så man holder sit workspace opdateret i forhold til hvad de andre i gruppen har lavet.
-
-Men det sker at der opstår "merge konflikter". Det sker hvis du har været inde i fil X og rettet i linje 18, samtidigt med at der er en anden der har gjort det samme. Hvis den anden har sagt `git push` før dig, så vil du få en række fejl når du siger `git push`:
-
-* Først vil du få at vide at du skal sige pull, da du er "bagud" i forhold til github.
-* Når du så siger pull, vil du få en meget lang fejlbeskrivelse. Den siger, at git ikke selv kunne finde ud af at sætte de to ændringer sammen (der er rettet det samme steder i de samme filer).
-
-1. Få dette til at ske - den ene af jer laver en ny ændring i datoformat i udskrivDato() metoden og pusher denne rettelse til github.
-2. Den anden laver også ændring i udskrivDato() metodens datoformat, men til noget andet forstås! Og prøver derefter et `git push` (efter `git add` og `git commit`).
-3. Dette bør give fejl. Så skrives `git pull`.
-4. Dette giver en fejlmeddelse i stil med denne:
-
-![](img/merge2.PNG)
-
-Åbn projektet i IntelliJ for at få vist merge konflikter. Klik på linket "Resolve":
-
-![](img/merge3.PNG)
-
-
-
-Du er ansvarlig (over for gruppen) for at få rettet dette til noget, der er OK. Det kan betyde du skal på github for at se hvem der har lavet den anden del, snakke med vedkommende, og så blive enige om hvad der skal gøres. Men det er dig, der skal rette det!
-
-Når du igen har noget kode der virker (måske er der dele fra begge to, der skal bruges) så kan du lave:
-
-`git add .` 
-
-`git commit -m "Rettet merge konflikt"` og 
-
-`git push`.
-
-Du har nu håndteret din første merge konflikt.
 
