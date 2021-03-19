@@ -23,34 +23,36 @@ Pretty much all systems need to persist data and relational databases are the mo
 
 ## Why aggregate functions?
 
-Let’s use this table ‘orders’:
-![](img/orders_table.png)
-
 
 ### Count():
 
-Count(*): Returns total number of records .i.e 6.
-Count(salary): Return number of Non Null values over the column salary. i.e 5.
-Count(Distinct Salary):  Return number of distinct Non Null values over the column salary .i.e 4
+* count(*): counts total number of records.
+* count(salary): counts number of not null values for the column salary.
+* count(distinct salary):  counts number of distinct non null values for the column salary.
 
 ### Sum():
 
-sum(salary):  Sum all Non Null values of Column salary i.e., 310
-sum(Distinct salary): Sum of all distinct Non-Null values i.e., 250.
+* sum(salary):  sums all not null values for column salary.
+* sum(distinct salary): sums all distinct non null values for the column salary.
 
 ### Avg():
 
-Avg(salary) = Sum(salary) / count(salary) = 310/5
-Avg(Distinct salary) = sum(Distinct salary) / Count(Distinct Salary) = 250/4
+* avg(salary) = sum(salary) / count(salary).
+* avg(distinct salary) = sum (distinct salary) / count(distinct salary).
 
  
 ### Min() & Max():
 
-Min(salary): Minimum value in the salary column except NULL i.e., 40.
-Max(salary): Maximum value in the salary i.e., 80.
+Min(salary): finds minimum value among the the not null values for the salary column.
+Max(salary): finds maximum value among the the not null values for the salary column.
 
-Examples (together) 
-If stated in natural language, what do the following SQL statements express (the result is shown below the SQL statement)?
+# Examples (together) 
+
+Let’s use this table ‘orders’:
+
+![](img/orders_table.png)
+
+### If stated in natural language, what do the following SQL statements express (the result is shown below the SQL statement)?
 
 A)
 select count(*) from orders;
