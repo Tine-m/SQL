@@ -193,7 +193,7 @@ Can you find any problems and possible improvements?
 
 ![](img/coffeeDB.png)
 
-What can we do about it?
+
 ```
 Redesign the database:
 1.	Update SQL script
