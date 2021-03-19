@@ -136,9 +136,11 @@ having count(*) > 2;
 ![](img/example_E.png)
 
 
-<div>
+<br>
+<br>
 Use `GROUP BY` and `HAVING`in the following exercises.
-  </div>
+ <br>
+<br>
 
 
 6. List number of employees of each gender.
@@ -183,7 +185,7 @@ What is that?
 
 What can we do about it?
 ```
-Redesign database
+Redesign the database:
 1.	Update SQL script
 2.	Make sure that the primary keys can be create automatically (hint: `AUTO_INCREMENT`)
 3.	Run SQL script 
