@@ -29,24 +29,24 @@ Sometimes we don't "just" want to retrive the actual rows from the database, but
 
 SQL aggregate functions can give of these summary queries. There are five functions: 
 
-### `count()`:
+### `count()`
 
 * count(*): counts total number of rows.
 * count(salary): counts number of not null values for the column, e.g. salary.
 * count(distinct salary):  counts number of distinct non null values for the column, e.g. salary.
 
-### sum():
+### `sum()`
 
 * sum(salary):  sums all not null values for column, e.g. salary.
 * sum(distinct salary): sums all distinct non null values for the column,e.g. salary.
 
-### avg():
+### `avg()`
 
 * avg(salary) = sum(salary) / count(salary).
 * avg(distinct salary) = sum (distinct salary) / count(distinct salary).
 
  
-### min() & max():
+### `min()` & `max()`
 
 Min(salary): finds minimum value among the the not null values for the column, e.g. salary.
 Max(salary): finds maximum value among the the not null values for the column, e.g. salary.
