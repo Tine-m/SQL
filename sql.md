@@ -182,30 +182,15 @@ What could that be?
 
 What can we do about it?
 ```
-$
 Redesign database
 1.	Update SQL script
-2.	Make sure that the primary keys can be create automatically (hint: `AUOT_INCREMENT`)
+2.	Make sure that the primary keys can be create automatically (hint: `AUTO_INCREMENT`)
 3.	Run SQL script 
-$
 ```
 **Voila you now have a redesigned database, ready to be shared wth the rest of your team!**
 
 
-git clone kommandoen skulle så gerne skrive noget i stil med:
 
-```
-$ git clone https://github.com/kaspercphbusiness/test100.git
-Cloning into 'test100'...
-remote: Counting objects: 7, done.
-remote: Compressing objects: 100% (5/5), done.
-remote: Total 7 (delta 1), reused 0 (delta 0), pack-reused 0
-Unpacking objects: 100% (7/7), done.
-$
-```
-
-
-**Tillykke, du har nu dit første lokale git repository!**
 
 
 #### Kopier filer ind i workspace
