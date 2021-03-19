@@ -1,6 +1,6 @@
-# SQL Aggregate functions (Murach chap 6 Summary queries)
+# SQL Aggregate functions (Murach chap 6 Summary Queries)
 
-An aggregate function is a computation where the values of multiple rows are grouped together as input on certain criteria to form a single value of more significant meaning
+An aggregate function is a computation where the values of multiple rows are grouped together as input on certain criteria to form a single value of more significant meaning.
 
 ## Learning Objectives
 The idea is that you after working with these exercises:
@@ -12,10 +12,10 @@ The idea is that you after working with these exercises:
 
 
 ## Relevance for your professional life
-Pretty much all systems need to persist data and relational databases are the most widely used for administrative systems. You will need SQL to get data in and out of the database.
+Pretty much all systems need to persist data and relational databases are the most widely used for (administrative) systems. You will need SQL as a query language to get data out of the database.
 
 ##  Supplementary resources
-- [https://www.w3schools.com/sql/default.asp) w3schools tutorials
+- [w3schools tutorial](https://www.w3schools.com/sql/default.asp) Min, Max, Avg, count, Sum
 - [LinkedIn Learning video](https://www.linkedin.com/learning/sql-essential-training-3/what-are-aggregates?u=36836804) SQL Essential Training: chapter 8
 
 
