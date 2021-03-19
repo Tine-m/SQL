@@ -81,7 +81,7 @@ select min(order_date) from orders;
 
 # Exercises (20 minutes)
 
-We will be working with the coffee-database (the database you used in Benjamin’s classes). If you don’t have the database already, find the script to create the database [here.](https://github.com/behu-kea/dat20-classes/blob/master/week-11/assets/coffee-database.sql)
+We will use the coffee-database (the database you used in Benjamin’s classes). If you don’t have the database already, find the script to create the database [here.](https://github.com/behu-kea/dat20-classes/blob/master/week-11/assets/coffee-database.sql)
 
 
 1)	Find the number of female customers.
@@ -101,12 +101,31 @@ select avg(price) from product;
 select round(avg(price)) from product;
 ```
 
-4)	
-a.	List product id, country and price for all products (no aggregate function to be used here, but a join of product and country tables is needed)
+4)	List product id, country and price for all products (no aggregate function, but a join of product and country tables is needed)
 
 ```sql
 select product_id, country, price from product inner join country on product.country_id = country.country_id;
 ```
+
+
+
+### Group by and having
+
+You can aggregate data grouped by some criteria using GROUP BY: <br>
+In this example we are counting the number of orders for each customer (i.e grouped by customer_id):
+
+```sql
+select customer_id, count(*) from orders
+group by orders.customer_id;
+```
+![](img/example_D.png)
+
+
+
+`hej`
+`git hej` 
+
+
 b.	List product id, country and average price for products grouped by country 
 ```sql
 select product_id, country, avg(price) from product inner join country on product.country_id = country.country_id
@@ -129,15 +148,9 @@ group by price having count(*) > 1;
 
 
 
-
 ### Group by having
 
-D)
-```sql
-select customer_id, count(*) from orders
-group by orders.customer_id;
-```
-![](img/example_D.png)
+
 
 Workspace (arbejdsområde) er de filer, der er i din normale filstruktur. Tænk på et IntelliJ projekt som et eksempel.
 
