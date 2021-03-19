@@ -70,20 +70,24 @@ select count(distinct customer_id) from orders;
 ![](img/example_B.png)
 
 C)
-select customer_id, count(*) from orders
-group by orders.customer_id;
-
-![](img/example_C.png)
-
-D)
 select min(order_date) from orders;
 
-![](img/example_D.png)
+![](img/example_C.png)
 
 
 ## Git begreber
 
-### Workspace
+
+
+
+### Group by having
+
+D)
+select customer_id, count(*) from orders
+group by orders.customer_id;
+
+![](img/example_D.png)
+
 Workspace (arbejdsområde) er de filer, der er i din normale filstruktur. Tænk på et IntelliJ projekt som et eksempel.
 
 ### Snapshot
