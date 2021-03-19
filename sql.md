@@ -57,7 +57,7 @@ Let’s use this table ‘orders’:
 
 ![](img/orders_table.png)
 
-### If stated in natural language, what do the following SQL statements express (the result is shown below the SQL statement)?
+### Stated in natural language, what do the following SQL statements express (the result is shown below the SQL statement)?
 
 A)
 select count(*) from orders;
