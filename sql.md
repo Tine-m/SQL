@@ -29,7 +29,7 @@ Sometimes we don't "just" want to retrive the actual rows from the database, but
 
 SQL aggregate functions can give of these summary queries. There are five functions: 
 
-### count():
+### `count()`:
 
 * count(*): counts total number of rows.
 * count(salary): counts number of not null values for the column, e.g. salary.
