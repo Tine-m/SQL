@@ -149,7 +149,7 @@ Use `GROUP BY` and `HAVING`in the following exercises.
 
 
 6. List number of employees of each gender.
-7. <!---
+<!---
 ```sql
 select count(*) from customer
 group by gender;
