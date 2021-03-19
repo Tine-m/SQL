@@ -84,34 +84,39 @@ We will use the coffee-database (the database you used in Benjamin’s classes).
 
 
 1.	Find the number of female customers.
+
+<!---
 ```sql
 select count(*) from customer
 where gender = 'F';
 ```
-
+-->
 2.	Find the number of customers whose last name starts with ‘B’.
+<!---
 ```sql
 select count(*) from customer
 where lastname like 'B%';
 ```
+-->
 3.	Calculate the average price of all products (only output the average price, no other information).
+<!---
 ```sql
 select avg(price) from product;
 select round(avg(price)) from product;
 ```
-
+-->
 4.	List product id, country and price for all products (no aggregate function, but a join of product and country tables is needed).
-
+<!---
 ```sql
 select product_id, country, price from product inner join country on product.country_id = country.country_id;
 ```
-
+-->
 5. Calculate the total sum of all orders.
-
+<!---
 ```sql
 SELECT sum(qty * price) FROM order_details natual join product;
 ```
-
+-->
 
 ### Group by and having
 
@@ -144,36 +149,41 @@ Use `GROUP BY` and `HAVING`in the following exercises.
 
 
 6. List number of employees of each gender.
+7. <!---
 ```sql
 select count(*) from customer
 group by gender;
 ```
-
+-->
 7. List number of employees of each gender, BUT only if there are more than 10 employees of the gender.
+<!---
 ```sql
 select count(*) from customer
 group by gender having count(gender) > 10;
 ```
+-->
 
 8.	List the average price (and no other information) for products for each country.
+<!---
 ```sql
 select avg(price) from product
 group by country_id;
 ```
-
+-->
 9.	List product id, country name and average product price for each country (you will need to join product and country tables).
+<!---
 ```sql
 select product_id, country, avg(price) from product inner join country on product.country_id = country.country_id
 group by country.country_id;
 ```
-
+-->
 10. List product id, country name and average product price for each country, but only for countries that have an average product price higher than 20.00. 
-
+<!---
 ```sql
 select product_id, country, avg(price) from product inner join country on product.country_id = country.country_id
 group by country.country_id having avg(price) > 20.0;
 ```
-
+-->
 # SQL Script exercise
 
 
