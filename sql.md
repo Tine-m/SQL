@@ -2,7 +2,7 @@
 
 An aggregate function is a computation where the values of multiple rows are grouped together as input on certain criteria to form a single value of more significant meaning.
 
-![](img/aggregate_functions.png)
+![](img/aggregate_functions.PNG)
 
 ## Learning Objectives
 The idea is that you after working with these exercises:
