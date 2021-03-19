@@ -120,6 +120,16 @@ group by orders.customer_id;
 ![](img/example_C.png)
 
 
+You can limit the result, combining `GROUP BY` and `HAVING`. `HAVING` determines which groups are included in the final result: <br>
+In this example we are counting the number of orders for each customer (i.e grouped by customer_id), BUT only for customers that have more than 2 orders:
+
+```sql
+select customer_id, count(*) from orders
+group by orders.customer_id
+having count(*) >=3;
+```
+![](img/example_E.png)
+
 
 
 5.	List product id, country and average price for products grouped by country. 
