@@ -89,18 +89,18 @@ select count(*) from customer
 where gender = 'F';
 ```
 
-2)	Find the number of customers whose last name starts with ‘B’
+2)	Find the number of customers whose last name starts with ‘B’.
 ```sql
 select count(*) from customer
 where lastname like 'B%';
 ```
-3)	Calculate the average price of all products (only output the average price, no other information)
+3)	Calculate the average price of all products (only output the average price, no other information).
 ```sql
 select avg(price) from product;
 select round(avg(price)) from product;
 ```
 
-4)	List product id, country and price for all products (no aggregate function, but a join of product and country tables is needed)
+4)	List product id, country and price for all products (no aggregate function, but a join of product and country tables is needed).
 
 ```sql
 select product_id, country, price from product inner join country on product.country_id = country.country_id;
@@ -122,20 +122,18 @@ group by orders.customer_id;
 
 
 
-b.	List product id, country and average price for products grouped by country 
+5.	List product id, country and average price for products grouped by country. 
 ```sql
 select product_id, country, avg(price) from product inner join country on product.country_id = country.country_id
 group by country.country_id;
 ```
-a.	
-List product id, country and average price grouped by country, but only for countries having an average prices higher than 20.00 
+6. List product id, country and average price grouped by country, but only for countries having an average prices higher than 20.00. 
 
 ```sql
 select product_id, country, avg(price) from product inner join country on product.country_id = country.country_id
 group by country.country_id having avg(price) > 20.0;
 ```
-5.
-Find the number of products that have the same price
+7. Find the number of products that have the same price.
 
 ```sql
 select count(*) from product
@@ -143,64 +141,6 @@ group by price having count(*) > 1;
 ```
 
 
-
-### Group by having
-
-
-
-Workspace (arbejdsområde) er de filer, der er i din normale filstruktur. Tænk på et IntelliJ projekt som et eksempel.
-
-### Snapshot
-Et snapshot er en kopi af dit workspace, som man kan vende tilbage til (vende tilbage til betyder at det er nemt at kopiere et snapshot tilbage i workspace).
-
-### Repository 
-Repository (lager) er, hvor git lægger snapshots af workspace til side, så man kan vende tilbage til det, hvis der bliver behov for det. I praksis arbejder man med to repositories i git:
-
-* Et *lokalt repository*, som er på din egen maskine. Det tillader, at du kan lave nye snapshots selv. Det lokale repository er i et katalog der hedder ".git" i roden af dit IntelliJ projekt.
-* Et *delt repository*, som ligger på en server, som alle i teamet kan tilgå.
-
-#### Staging area (også kaldet "index")
-Dette er et specielt snapshot, som git holder styr på, men som endnu ikke er lagt i repository (staging area kan vel her oversættes til "byggepladsen"). Avancerede brugere kan lave alle mulige sjove ting med det. Vi kommer blot til at bruge det som mellemled mellem workspace og lokalt repository.
-
-### Git kommandoer
-Der er nogle få kommandoer vi kommer til at bruge fra git-bash:
-
-`git status` 
-
-* denne kommando fortæller dig:
-
-  * hvilke filer, der er nye i workspace (i forhold til staginging area)
-  * hvilke filer, der er ændret i workspace (i forhold til staginging area)
-  * hvilke filer, der er nye/ændrede i staging area sammeholdt med seneste snapshot i lokal repository
-  * forholdet mellem dit lokale repository og det delte repository
-
-`git add .` 
-
-* tilføjer alle ændringer i workspace til staging area.
-
-`git commit -m" beskrivelse"` 
-
-* lægger snapshot fra staging area over i lokal repository. Beskrivelsen skal kort sige, hvad du ændrede i denne version.
-
-`git log`
-
-* giver en liste over de snapshots, der er i repository. 
-
-`git clone URL`
-
-* bruges til at lave en lokal kopi af et delt repository. Dette er langt den nemmeste måde at starte et lokalt repository.
-
-`git push`
-
-* opdaterer det delte repository til også at inkludere de snapshots, du har i dit lokale repository
-
-`git pull`
-
-* opdaterer dit lokale repository til også at have de snapshots, der er i det delte repository
-
-Dette er en oversigt over de mest brugte kommandoer i git. Og vi vil næppe bruge ret mange af dem.
-
-![](img/Git-Cheat-Sheet.png)
 
 
 
