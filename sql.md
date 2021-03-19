@@ -1,4 +1,4 @@
-# SQL Aggregate functions (Murach Chapter 6 Summary Queries)
+# SQL Aggregate Functions (Murach Chapter 6 Summary Queries)
 
 An aggregate function is a computation where the values of multiple rows are grouped together as input on certain criteria to form a single value of more significant meaning.
 
@@ -29,27 +29,27 @@ Sometimes we don't "just" want to retrive the actual rows from the database, but
 
 SQL aggregate functions can give of these summary queries. There are five functions: 
 
-### count():
+### `count()`
 
 * count(*): counts total number of rows.
 * count(salary): counts number of not null values for the column, e.g. salary.
 * count(distinct salary):  counts number of distinct non null values for the column, e.g. salary.
 
-### sum():
+### `sum()`
 
 * sum(salary):  sums all not null values for column, e.g. salary.
 * sum(distinct salary): sums all distinct non null values for the column,e.g. salary.
 
-### avg():
+### `avg()`
 
 * avg(salary) = sum(salary) / count(salary).
 * avg(distinct salary) = sum (distinct salary) / count(distinct salary).
 
  
-### min() & max():
+### `min()` & `max()`
 
-Min(salary): finds minimum value among the the not null values for the column, e.g. salary.
-Max(salary): finds maximum value among the the not null values for the column, e.g. salary.
+* min(salary): finds minimum value among the the not null values for the column, e.g. salary.
+* max(salary): finds maximum value among the the not null values for the column, e.g. salary.
 
 # Examples (together) 
 
@@ -60,83 +60,97 @@ Let’s use this table ‘orders’:
 ### Stated in natural language, what do the following SQL statements express (the result is shown below the SQL statement)?
 
 A)
+```sql
 select count(*) from orders;
-
+```
 ![](img/example_A.png)
 
 B)
+```sql
 select count(distinct customer_id) from orders;
-
+```
 ![](img/example_B.png)
 
 C)
-select customer_id, count(*) from orders
-group by orders.customer_id;
-
+```sql
+select min(order_date) from orders;
+```
 ![](img/example_C.png)
 
-D)
-select min(order_date) from orders;
 
-![](img/example_D.png)
+# Exercises (20 minutes)
+
+We will use the coffee-database (the database you used in Benjamin’s classes). If you don’t have the database already, find the script to create the database [here.](https://github.com/behu-kea/dat20-classes/blob/master/week-11/assets/coffee-database.sql)
 
 
-## Git begreber
+1)	Find the number of female customers.
+```sql
+select count(*) from customer
+where gender = 'F';
+```
 
-### Workspace
-Workspace (arbejdsområde) er de filer, der er i din normale filstruktur. Tænk på et IntelliJ projekt som et eksempel.
+2)	Find the number of customers whose last name starts with ‘B’.
+```sql
+select count(*) from customer
+where lastname like 'B%';
+```
+3)	Calculate the average price of all products (only output the average price, no other information).
+```sql
+select avg(price) from product;
+select round(avg(price)) from product;
+```
 
-### Snapshot
-Et snapshot er en kopi af dit workspace, som man kan vende tilbage til (vende tilbage til betyder at det er nemt at kopiere et snapshot tilbage i workspace).
+4)	List product id, country and price for all products (no aggregate function, but a join of product and country tables is needed).
 
-### Repository 
-Repository (lager) er, hvor git lægger snapshots af workspace til side, så man kan vende tilbage til det, hvis der bliver behov for det. I praksis arbejder man med to repositories i git:
+```sql
+select product_id, country, price from product inner join country on product.country_id = country.country_id;
+```
 
-* Et *lokalt repository*, som er på din egen maskine. Det tillader, at du kan lave nye snapshots selv. Det lokale repository er i et katalog der hedder ".git" i roden af dit IntelliJ projekt.
-* Et *delt repository*, som ligger på en server, som alle i teamet kan tilgå.
 
-#### Staging area (også kaldet "index")
-Dette er et specielt snapshot, som git holder styr på, men som endnu ikke er lagt i repository (staging area kan vel her oversættes til "byggepladsen"). Avancerede brugere kan lave alle mulige sjove ting med det. Vi kommer blot til at bruge det som mellemled mellem workspace og lokalt repository.
 
-### Git kommandoer
-Der er nogle få kommandoer vi kommer til at bruge fra git-bash:
+### Group by and having
 
-`git status` 
+You can aggregate data grouped by some criteria using `GROUP BY`: <br>
+In this example we are counting the number of orders for each customer (i.e grouped by customer_id):
 
-* denne kommando fortæller dig:
+```sql
+select customer_id, count(*) from orders
+group by orders.customer_id;
+```
+![](img/example_C.png)
 
-  * hvilke filer, der er nye i workspace (i forhold til staginging area)
-  * hvilke filer, der er ændret i workspace (i forhold til staginging area)
-  * hvilke filer, der er nye/ændrede i staging area sammeholdt med seneste snapshot i lokal repository
-  * forholdet mellem dit lokale repository og det delte repository
 
-`git add .` 
+You can limit the result, combining `GROUP BY` and `HAVING`. `HAVING` determines which groups are included in the final result: <br>
+In this example we are counting the number of orders for each customer (i.e grouped by customer_id), BUT only for customers that have more than 2 orders:
 
-* tilføjer alle ændringer i workspace til staging area.
+```sql
+select customer_id, count(*) from orders
+group by orders.customer_id
+having count(*) >=3;
+```
+![](img/example_E.png)
 
-`git commit -m" beskrivelse"` 
 
-* lægger snapshot fra staging area over i lokal repository. Beskrivelsen skal kort sige, hvad du ændrede i denne version.
 
-`git log`
+5.	List product id, country and average price for products grouped by country. 
+```sql
+select product_id, country, avg(price) from product inner join country on product.country_id = country.country_id
+group by country.country_id;
+```
+6. List product id, country and average price grouped by country, but only for countries having an average prices higher than 20.00. 
 
-* giver en liste over de snapshots, der er i repository. 
+```sql
+select product_id, country, avg(price) from product inner join country on product.country_id = country.country_id
+group by country.country_id having avg(price) > 20.0;
+```
+7. Find the number of products that have the same price.
 
-`git clone URL`
+```sql
+select count(*) from product
+group by price having count(*) > 1;
+```
 
-* bruges til at lave en lokal kopi af et delt repository. Dette er langt den nemmeste måde at starte et lokalt repository.
 
-`git push`
-
-* opdaterer det delte repository til også at inkludere de snapshots, du har i dit lokale repository
-
-`git pull`
-
-* opdaterer dit lokale repository til også at have de snapshots, der er i det delte repository
-
-Dette er en oversigt over de mest brugte kommandoer i git. Og vi vil næppe bruge ret mange af dem.
-
-![](img/Git-Cheat-Sheet.png)
 
 
 
