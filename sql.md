@@ -111,19 +111,16 @@ select product_id, country, price from product inner join country on product.cou
 
 ### Group by and having
 
-You can aggregate data grouped by some criteria using GROUP BY: <br>
+You can aggregate data grouped by some criteria using `GROUP BY`: <br>
 In this example we are counting the number of orders for each customer (i.e grouped by customer_id):
 
 ```sql
 select customer_id, count(*) from orders
 group by orders.customer_id;
 ```
-![](img/example_D.png)
+![](img/example_C.png)
 
 
-
-`hej`
-`git hej` 
 
 
 b.	List product id, country and average price for products grouped by country 
