@@ -1,4 +1,4 @@
-# SQL Aggregate functions (Murach Chapter 6 Summary Queries)
+# SQL Aggregate Functions (Murach Chapter 6 Summary Queries)
 
 An aggregate function is a computation where the values of multiple rows are grouped together as input on certain criteria to form a single value of more significant meaning.
 
@@ -89,12 +89,12 @@ select count(*) from customer
 where gender = 'F';
 ```
 
-2)	Find the number of customers whose name starts with ‘B’
+2)	Find the number of customers whose last name starts with ‘B’
 ```sql
 select count(*) from customer
 where lastname like 'B%';
 ```
-3)	Calculate the average price of all products (only output the average price)
+3)	Calculate the average price of all products (only output the average price, no other information)
 ```sql
 select avg(price) from product;
 select round(avg(price)) from product;
