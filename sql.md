@@ -48,8 +48,8 @@ SQL aggregate functions can give of these summary queries. There are five functi
  
 ### `min()` & `max()`
 
-Min(salary): finds minimum value among the the not null values for the column, e.g. salary.
-Max(salary): finds maximum value among the the not null values for the column, e.g. salary.
+* min(salary): finds minimum value among the the not null values for the column, e.g. salary.
+* max(salary): finds maximum value among the the not null values for the column, e.g. salary.
 
 # Examples (together) 
 
@@ -57,8 +57,7 @@ Let’s use this table ‘orders’:
 
 ![](img/orders_table.png)
 
-### If stated in natural language, 
-what do the following SQL statements express (the result is shown below the SQL statement)?
+### If stated in natural language, what do the following SQL statements express (the result is shown below the SQL statement)?
 
 A)
 ```sql
