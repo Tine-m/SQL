@@ -83,29 +83,34 @@ select min(order_date) from orders;
 We will use the coffee-database (the database you used in Benjamin’s classes). If you don’t have the database already, find the script to create the database [here.](https://github.com/behu-kea/dat20-classes/blob/master/week-11/assets/coffee-database.sql)
 
 
-1)	Find the number of female customers.
+1.	Find the number of female customers.
 ```sql
 select count(*) from customer
 where gender = 'F';
 ```
 
-2)	Find the number of customers whose last name starts with ‘B’.
+2.	Find the number of customers whose last name starts with ‘B’.
 ```sql
 select count(*) from customer
 where lastname like 'B%';
 ```
-3)	Calculate the average price of all products (only output the average price, no other information).
+3.	Calculate the average price of all products (only output the average price, no other information).
 ```sql
 select avg(price) from product;
 select round(avg(price)) from product;
 ```
 
-4)	List product id, country and price for all products (no aggregate function, but a join of product and country tables is needed).
+4.	List product id, country and price for all products (no aggregate function, but a join of product and country tables is needed).
 
 ```sql
 select product_id, country, price from product inner join country on product.country_id = country.country_id;
 ```
 
+5. Calculate the total sum of all orders.
+
+```sql
+SELECT sum(qty * price) FROM order_details natual join product;
+```
 
 
 ### Group by and having
@@ -132,26 +137,40 @@ having count(*) > 2;
 
 <br>
 <br>
+Use one or both clauses in the following exercises.
 
-5.	List product id, country and average price for products grouped by country. 
+6. List number of employees of each gender.
+```sql
+select count(*) from customer
+group by gender;
+```
+
+7. List number of employees of each gender, BUT only if there are more than 10 employees of the gender.
+```sql
+select count(*) from customer
+group by gender having count(gender) > 10;
+```
+
+8.	List the average price (and no other information) for products for each country.
+```sql
+select avg(price) from product
+group by country_id;
+```
+
+9.	List product id, country name and average product price for products for each country (you will need to join product table with country table).
 ```sql
 select product_id, country, avg(price) from product inner join country on product.country_id = country.country_id
 group by country.country_id;
-
 ```
-6. List product id, country and average price grouped by country, but only for countries having an average prices higher than 20.00. 
+
+10. List product id, country and average product price for each country, but only for countries having an average product prices higher than 20.00. 
 
 ```sql
 select product_id, country, avg(price) from product inner join country on product.country_id = country.country_id
 group by country.country_id having avg(price) > 20.0;
 ```
 
-7. Find the number of products that have the same price.
 
-```sql
-select count(*) from product
-group by price having count(*) > 1;
-```
 
 
 
