@@ -77,7 +77,7 @@ select min(order_date) from orders;
 ![](img/example_C.png)
 
 
-# Exercises (30 minutes)
+# Exercises (40 minutes)
 
 We will use the coffee-database (the database you used in Benjamin’s classes). If you don’t have the database already, find the script to create the database [here.](https://github.com/behu-kea/dat20-classes/blob/master/week-11/assets/coffee-database.sql)
 
