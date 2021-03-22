@@ -126,7 +126,7 @@ In this example we are counting the number of orders for each customer (i.e grou
 select customer_id, count(*) from orders
 group by orders.customer_id;
 ```
-![](img/example_C.png)
+![](img/example_D.png)
 
 
 You can limit the result, combining `GROUP BY` and `HAVING`. `HAVING` determines which groups are included in the final result. <br>
