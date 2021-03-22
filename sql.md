@@ -88,32 +88,31 @@ We will use the coffee-database (the database you used in Benjamin’s classes).
 select count(*) from customer
 where gender = 'F';
 ```
-1.	Find the number of customers whose last name starts with ‘B’.
-<!---
+2.	Find the number of customers whose last name starts with ‘B’.
+
 ```sql
 select count(*) from customer
 where lastname like 'B%';
 ```
--->
-2.	Calculate the average price of all products (only output the average price, no other information).
-<!---
+
+3.	Calculate the average price of all products (only output the average price, no other information).
+
 ```sql
 select avg(price) from product;
 select round(avg(price)) from product;
 ```
--->
-3.	List product id, country and price for all products (no aggregate function, but a join of product and country tables is needed).
-<!---
+4.	List product id, country and price for all products (no aggregate function, but a join of product and country tables is needed).
+
 ```sql
 select product_id, country, price from product inner join country on product.country_id = country.country_id;
 ```
--->
-4. Calculate the total sum of all orders.
-<!---
+
+5. Calculate the total sum of all orders.
+
 ```sql
 SELECT sum(qty * price) FROM order_details natual join product;
 ```
--->
+
 
 ### Group by and having
 
