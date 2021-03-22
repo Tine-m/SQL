@@ -9,3 +9,5 @@ The idea is that you after working with today's exercises:
 - can maintain an SQL script to handle database changes
 - AUTO_INCREMENT
 
+[See more](sql.md)
+
