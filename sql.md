@@ -110,7 +110,9 @@ select product_id, country, price from product inner join country on product.cou
 5. Calculate the total sum of all orders.
 
 ```sql
-SELECT sum(qty * price) FROM order_details natural join product;
+SELECT SUM(price * qty) AS 'TOTAL SUM OF ORDERS'
+FROM order_table
+INNER JOIN product ON product.product_id = order_table.product_id;;
 ```
 
 
