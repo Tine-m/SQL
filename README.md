@@ -1,2 +1,3 @@
 # SQL
-SQL Training
+SQL Training Murach chapter 6- Summary queries
+
