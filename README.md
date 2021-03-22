@@ -1,5 +1,5 @@
 # SQL
-March 22nd, 2021: SQL Training Murach chapter 6- Summary queries
+March 22, 2021: SQL Training Murach chapter 6- Summary queries
 
 Learning Objectives
 The idea is that you after working with today's exercises:
