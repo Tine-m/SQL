@@ -112,7 +112,7 @@ select product_id, country, price from product inner join country on product.cou
 ```sql
 SELECT SUM(price * qty) AS 'TOTAL SUM OF ORDERS'
 FROM order_table
-INNER JOIN product ON product.product_id = order_table.product_id;;
+INNER JOIN product ON product.product_id = order_table.product_id;
 ```
 
 
@@ -146,42 +146,40 @@ Use `GROUP BY` and `HAVING`in the following exercises.
 <br>
 
 
-6. List number of employees of each gender.
-<!---
+1. List number of customers of each gender.
 ```sql
 select count(*) from customer
 group by gender;
 ```
--->
-7. List number of employees of each gender, BUT only if there are more than 10 employees of the gender.
-<!---
+
+2. List number of customers of each gender, BUT only if there are more than 10 employees of the gender.
+
 ```sql
 select count(*) from customer
 group by gender having count(gender) > 10;
 ```
--->
 
-8.	List the average price (and no other information) for products for each country.
-<!---
+
+1.	List the average price (and no other information) for products for each country.
 ```sql
 select avg(price) from product
 group by country_id;
 ```
--->
-9.	List product id, country name and average product price for each country (you will need to join product and country tables).
-<!---
+
+2.	List product id, country name and average product price for each country (you will need to join product and country tables).
+
 ```sql
 select product_id, country, avg(price) from product inner join country on product.country_id = country.country_id
 group by country.country_id;
 ```
--->
-10. List product id, country name and average product price for each country, but only for countries that have an average product price higher than 20.00. 
-<!---
+
+3. List product id, country name and average product price for each country, but only for countries that have an average product price higher than 20.00. 
+
 ```sql
 select product_id, country, avg(price) from product inner join country on product.country_id = country.country_id
 group by country.country_id having avg(price) > 20.0;
 ```
--->
+
 # SQL Script exercise (45 minutes)
 
 
