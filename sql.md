@@ -77,7 +77,7 @@ select min(order_date) from orders;
 ![](img/example_C.png)
 
 
-# Exercises (40 minutes)
+# Exercises (45 minutes)
 
 We will use the coffee-database (the database you used in Benjamin’s classes). If you don’t have the database already, find the script to create the database [here.](https://github.com/behu-kea/dat20-classes/blob/master/week-11/assets/coffee-database.sql)
 
@@ -183,7 +183,7 @@ select product_id, country, avg(price) from product inner join country on produc
 group by country.country_id having avg(price) > 20.0;
 ```
 -->
-# SQL Script exercise
+# SQL Script exercise (45 minutes)
 
 
 Something about the current coffee database design doesn’t quite seem right. <br>
