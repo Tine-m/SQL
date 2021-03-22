@@ -180,7 +180,7 @@ select product_id, country, avg(price) from product inner join country on produc
 group by country.country_id having avg(price) > 20.0;
 ```
 
-# SQL Script exercise (45 minutes)
+# SQL Script exercise (Home exercise - ~ 45-60 minutes)
 
 
 Something about the current coffee database design doesn’t quite seem right. <br>
